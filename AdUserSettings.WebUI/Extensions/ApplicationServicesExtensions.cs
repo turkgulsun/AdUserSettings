@@ -17,7 +17,7 @@ namespace AdUserSettings.WebUI.Extensions
         {
             //var connectionStringBlog = "Server = sqlserver-2.database.windows.net; Initial Catalog = BlogContext; Persist Security Info = False; User ID = SqlServerUser; Password = P@ssword1; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30";
 
-            var connectionStringBlog = "Server = localhost; Initial Catalog = AdUserSettignsContext;  MultipleActiveResultSets = False; Encrypt = True; Trusted_Connection=True; TrustServerCertificate = True; Connection Timeout = 30";
+            var connectionStringAdUserSettings = "Server = localhost; Initial Catalog = AdUserSettignsContext;  MultipleActiveResultSets = False; Encrypt = True; Trusted_Connection=True; TrustServerCertificate = True; Connection Timeout = 30";
 
 
             //AutoMapper
@@ -25,7 +25,7 @@ namespace AdUserSettings.WebUI.Extensions
 
             //services.AddScoped<IClassRepository, ClassRepository>();
 
-            services.AddDbContext<AdUserSettingsContext>(options => options.UseSqlServer(connectionStringBlog));
+            services.AddDbContext<AdUserSettingsContext>(options => options.UseSqlServer(connectionStringAdUserSettings));
 
             #region EFCore
 

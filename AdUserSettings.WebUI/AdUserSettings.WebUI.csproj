@@ -6,16 +6,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="bin\Debug\netcoreapp2.2\AdUserSettings.WebUI.deps.json" />
+    <Content Include="bin\Debug\netcoreapp2.2\AdUserSettings.WebUI.runtimeconfig.dev.json" />
+    <Content Include="bin\Debug\netcoreapp2.2\AdUserSettings.WebUI.runtimeconfig.json" />
+    <Content Include="bin\Debug\netcoreapp2.2\appsettings.Development.json" />
+    <Content Include="bin\Debug\netcoreapp2.2\appsettings.json" />
+    <Content Include="bin\Debug\netcoreapp2.2\Properties\launchSettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="AutoMapper\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+    <Folder Include="bin\Release\netcoreapp2.2\" />
     <Folder Include="ViewComponents\" />
     <Folder Include="Views\Shared\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\netcoreapp2.2\AdUserSettings.DataAccess.dll" />
+    <None Include="bin\Debug\netcoreapp2.2\AdUserSettings.DataAccess.pdb" />
+    <None Include="bin\Debug\netcoreapp2.2\AdUserSettings.EntityFrameworkCore.dll" />
+    <None Include="bin\Debug\netcoreapp2.2\AdUserSettings.EntityFrameworkCore.pdb" />
+    <None Include="bin\Debug\netcoreapp2.2\AdUserSettings.WebUI.dll" />
+    <None Include="bin\Debug\netcoreapp2.2\AdUserSettings.WebUI.pdb" />
+    <None Include="bin\Debug\netcoreapp2.2\AdUserSettings.WebUI.Views.dll" />
+    <None Include="bin\Debug\netcoreapp2.2\AdUserSettings.WebUI.Views.pdb" />
   </ItemGroup>
 
   <ItemGroup>
