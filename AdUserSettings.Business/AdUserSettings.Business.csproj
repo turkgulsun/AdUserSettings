@@ -6,10 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
+    <ProjectReference Include="..\AdUserSettings.DataAccess\AdUserSettings.DataAccess.csproj" />
+    <ProjectReference Include="..\AdUserSettings.Entities\AdUserSettings.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Common\" />
-    <Folder Include="Concrete\" />
-    <Folder Include="DTOs\" />
   </ItemGroup>
 
 </Project>

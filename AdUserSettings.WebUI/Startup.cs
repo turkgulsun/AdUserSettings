@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using AdUserSettings.Business.Abstract;
+using AdUserSettings.Business.Concrete;
 using AdUserSettings.WebUI.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,6 +22,8 @@ namespace AdUserSettings.WebUI
         {
             //Extensions
             services.AddAdUserSettingsServices();
+
+            services.AddScoped<ILogService, LogManager>();
 
             //MVC
             services.AddMvc();

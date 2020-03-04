@@ -1,7 +1,9 @@
-﻿using AdUserSettings.DataAccess.Concrete.EntityFramework;
+﻿using AdUserSettings.DataAccess.Abstract;
+using AdUserSettings.DataAccess.Concrete.EntityFramework;
 using AdUserSettings.DataAccess.Infrastructure;
 using AdUserSettings.EntityFrameworkCore;
 using AdUserSettings.EntityFrameworkCore.Abstractions;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -21,9 +23,9 @@ namespace AdUserSettings.WebUI.Extensions
 
 
             //AutoMapper
-            //services.AddAutoMapper(typeof(Startup));
+            services.AddAutoMapper(typeof(Startup));
 
-            //services.AddScoped<IClassRepository, ClassRepository>();
+            services.AddScoped<ILogRepository, LogRepository>();
 
             services.AddDbContext<AdUserSettingsContext>(options => options.UseSqlServer(connectionStringAdUserSettings));
 

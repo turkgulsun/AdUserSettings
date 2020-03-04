@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Concrete\" />
+    <ProjectReference Include="..\AdUserSettings.EntityFrameworkCore\AdUserSettings.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
 </Project>

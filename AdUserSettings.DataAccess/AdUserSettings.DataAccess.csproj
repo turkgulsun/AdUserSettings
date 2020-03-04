@@ -12,9 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
     <Folder Include="bin\Release\netcoreapp2.2\" />
-    <Folder Include="Configurations\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +23,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdUserSettings.Entities\AdUserSettings.Entities.csproj" />
     <ProjectReference Include="..\AdUserSettings.EntityFrameworkCore\AdUserSettings.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
