@@ -34,6 +34,7 @@ namespace AdUserSettings.WebUI.Controllers
             return View(userVM);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Index(UserVM userVM)
         {
             if (!ModelState.IsValid)
