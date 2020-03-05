@@ -21,6 +21,7 @@ namespace AdUserSettings.WebUI.Controllers
 
         private readonly ILogService _logService;
         private IMapper _mapper;
+        
         public HomeController(ILogService logService, IMapper mapper)
         {
             _logService = logService;
@@ -44,6 +45,7 @@ namespace AdUserSettings.WebUI.Controllers
             string userName = userVM.UserName;
             string messsage = "";
 
+            
             try
             {
                 using (var context = AdUserSettingsHelper.GetContext())
@@ -56,22 +58,23 @@ namespace AdUserSettings.WebUI.Controllers
                             user.UnlockAccount();
                             messsage = "Hesabınızın kilidi kaldırılmıştır.";
                             ToLogDTo(userName, messsage, LogTypeHelper.Success);
+                            TempData["UserMessage"] = messsage;
                         }
                         else
                         {
                             messsage = "Hesabınız kilitli değildir.";
                             ToLogDTo(userName, messsage, LogTypeHelper.Info);
+                            TempData["UserMessage"] = messsage;
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-
                 messsage = ex.Message;
                 ToLogDTo(userName, messsage, LogTypeHelper.Error);
+                TempData["UserMessage"] = messsage;
             }
-
 
             return View();
         }
@@ -87,58 +90,5 @@ namespace AdUserSettings.WebUI.Controllers
 
             _logService.Add(logDTO);
         }
-
-
-
-        //public void Method()
-        //{
-        //    PrincipalContext principalContext = new PrincipalContext(ContextType.Domain, "domain.local", "domain_standart_user", "domain_standart_user_pass");
-        //    UserPrincipal userPrincipal = null;
-        //    string userName = "";
-        //    //domain bilgileri sonradan olusturdugumuz bir classtir.
-        //    //objesi uretilip icerisinde domainden aldigimiz verileri koyuyoruz.
-        //    //bu objeyi ister bir metoda dönüş verebilir ister buton_click'inde kullanabilir
-        //    //isterseniz de kullanmayabilirsiniz.
-        //    AdUser adUser = new AdUser();
-        //    try
-        //    {
-        //        userPrincipal = UserPrincipal.FindByIdentity(principalContext, IdentityType.SamAccountName, userName);
-        //        adUser.isAccessSuccess = true;
-        //    }
-        //    catch
-        //    {
-        //        adUser.isAccessSuccess = false;
-        //        return adUser;
-        //    }
-        //    if (userPrincipal == null)
-        //    {
-        //        adUser.isAccountFound = false;
-        //        return adUser;
-        //    }
-        //    if (userPrincipal.SamAccountName == "")
-        //    {
-        //        adUser.isAccountFound = false;
-        //        return adUser;
-        //    }
-        //    adUser.isAccountFound = true;
-        //    adUser.DisplayName = userPrincipal.DisplayName;
-        //    adUser.EmailAddress = userPrincipal.EmailAddress;
-        //    adUser.LastPasswordSet = userPrincipal.LastPasswordSet.ToString();
-        //    if (userPrincipal.Enabled != null)
-        //    {
-        //        if (userPrincipal.Enabled == true)
-        //            adUser.IsActive = true;
-        //        else
-        //            adUser.IsActive = false;
-        //    }
-        //    else
-        //        adUser.IsActive = false;
-        //    if (userPrincipal.IsAccountLockedOut())
-        //        adUser.IsLocked = true;
-        //    else
-        //        adUser.IsLocked = false;
-        //    userPrincipal = null;
-        //    principalContext = null;
-        //}
     }
 }

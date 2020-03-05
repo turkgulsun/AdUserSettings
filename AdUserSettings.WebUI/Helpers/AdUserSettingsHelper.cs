@@ -13,13 +13,13 @@ using System.DirectoryServices.AccountManagement;
 
 namespace AdUserSettings.WebUI.Helpers
 {
-    public static class AdUserSettingsHelper
+    public class AdUserSettingsHelper
     {
         private static IConfiguration _configuration;
         private static AdSetting _adSetting;
 
         public static IConfiguration configuration { get; set; }
-        static AdUserSettingsHelper()
+        public AdUserSettingsHelper()
         {
             _configuration = configuration;
             _adSetting = configuration.GetSection("AdSetting").Get<AdSetting>();
