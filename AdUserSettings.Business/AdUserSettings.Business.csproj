@@ -10,8 +10,4 @@
     <ProjectReference Include="..\AdUserSettings.Entities\AdUserSettings.Entities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Common\" />
-  </ItemGroup>
-
 </Project>

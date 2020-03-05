@@ -68,7 +68,8 @@ namespace AdUserSettings.WebUI.Controllers
             catch (Exception ex)
             {
 
-                throw;
+                messsage = ex.Message;
+                ToLogDTo(userName, messsage, LogTypeHelper.Error);
             }
 
 

@@ -45,6 +45,13 @@ namespace AdUserSettings.WebUI
                 RequestPath = "/content"
             });
 
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                  Path.Combine(env.ContentRootPath, "node_modules")),
+                RequestPath = "/node_modules"
+            });
+
 
             //Route
             app.UseMvc(routes =>
